@@ -7,26 +7,65 @@
     <title>Portfolio Océane Massé</title>
 </head>
 <body>
+
     <header>
         <div class="banner">
             <div class="profile">
                 <img src="../../Ressources/Images/garsmoche.png" alt="Nom.png">
             </div>
             <div class="banner_center">
-                <h1>Portfolio</h1>
+                <h1>
+                    <a href="#" data-page="Profil" class="title-click">Portfolio</a>
+                </h1>
+
                 <h3>MASSÉ Océane</h3>
             </div>
             <nav class="banner_nav">
                 <ul>
-                    <li><a href="#Portfolio">Portfolio</a></li>
-                    <li><a href="#projets">Parcours scolaire</a></li>
-                    <li><a href="#competences">Diplômes</a></li>
-                    <li><a href="#contact">CV</a></li>
+                    <li><a href="#" data-page="Portfolio">Portfolio</a></li>
+                    <li><a href="#" data-page="Parcours">Parcours scolaire</a></li>
+                    <li><a href="#" data-page="Diplomes">Diplômes</a></li>
+                    <li><a href="#" data-page="CV">CV</a></li>
                 </ul>
             </nav>
-
         </div>
     </header>
-    
+
+<main id="main-content">
+
+</main>
+
+    <footer id="footer-deroulant">
+        <div class="footer-content">
+            <p><b>© 2025 Océane Massé - Tous droits réservés</b></p>
+            <p><b>Téléphone : </b>06 63 56 92 45</p>
+            <p><b>Email : </b>oceanemasse29@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="./scripts/loader.js"></script>
+    <script>
+  const footer = document.getElementById('footer-deroulant');
+  let footerVisible = false;
+
+  window.addEventListener('scroll', () => {
+    // hauteur totale page - hauteur fenêtre
+    const scrollBottom = window.scrollY + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+
+    // Quand on est à moins de 50px du bas, afficher footer
+    if (scrollBottom >= pageHeight - 50) {
+      if (!footerVisible) {
+        footer.classList.add('visible');
+        footerVisible = true;
+      }
+    } else {
+      if (footerVisible) {
+        footer.classList.remove('visible');
+        footerVisible = false;
+      }
+    }
+  });
+</script>
 </body>
 </html>

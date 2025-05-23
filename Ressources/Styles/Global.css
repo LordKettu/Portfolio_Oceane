@@ -21,11 +21,41 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-image: url('../../Sources/background.png'); /* Corrige le chemin si nécessaire */
     background-size: cover;
     opacity: 0.85;
     box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.5);
     z-index: 1000;
+}
+
+main#main-content {
+  margin-top: 180px; /* même hauteur que le header */
+  padding: 20px;
+}
+
+#footer-deroulant {
+  position: fixed;
+  bottom: -90px; /* caché sous l’écran (ajuste selon hauteur footer) */
+  left: 0;
+  width: 100%;
+  background-color: #f3beb6;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+  color: beige;
+  text-align: center;
+  padding: 20px 0;
+  font-family: 'Montserrat', sans-serif;
+  transition: bottom 0.3s ease;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* Quand on survole la zone tout en bas de la page */
+#footer-deroulant:hover {
+  bottom: 0;
+}
+
+/* Footer ouvert */
+#footer-deroulant.visible {
+  bottom: 0;
 }
 
 .banner {
@@ -38,6 +68,7 @@ header {
     color: beige;
     position: relative; /* pour .banner_center en absolute */
 }
+
 /* Partie gauche : image + nom */
 .profile {
     display: flex;
@@ -111,4 +142,26 @@ header {
 
 .banner_nav li a:hover {
     color: rgb(238, 111, 111);
+}
+
+
+.banner_center h1 {
+  font-family: 'LucyRose', serif;
+  font-size: 60px;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid beige;
+  display: inline-block;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.banner_center h1 a.title-click {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.banner_center h1 a.title-click:hover {
+  color: rgb(238, 111, 111);
 }
