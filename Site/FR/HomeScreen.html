@@ -62,43 +62,45 @@ function checkFooterVisibility() {
 
 window.addEventListener('scroll', checkFooterVisibility);
 
-function toggleSemestre(clickedBlock) {
+// Gère l'ouverture d'un semestre, fermeture des autres
+function toggleSemestre(elem) {
   const allSemestres = document.querySelectorAll('.semestre-block');
-
-  allSemestres.forEach(block => {
-    const content = block.querySelector('.ue-list');
-
-    if (block === clickedBlock) {
-      const isOpen = block.classList.contains('open');
-      if (isOpen) {
-        block.classList.remove('open');
-        content.style.maxHeight = null;
-      } else {
-        block.classList.add('open');
-        content.style.maxHeight = content.scrollHeight + 'px';
-      }
-    } else {
-      block.classList.remove('open');
-      block.querySelector('.ue-list').style.maxHeight = null;
+  allSemestres.forEach(sem => {
+    if (sem !== elem) {
+      sem.classList.remove('open');
+      // Réinitialiser hauteur max pour animation fermeture
+      const ueList = sem.querySelector('.ue-list');
+      if (ueList) ueList.style.maxHeight = null;
     }
   });
-
-  setTimeout(checkFooterVisibility, 500);
+  
+  // Toggle celui cliqué
+  const isOpen = elem.classList.contains('open');
+  const ueList = elem.querySelector('.ue-list');
+  
+  if (isOpen) {
+    elem.classList.remove('open');
+    if (ueList) ueList.style.maxHeight = null;
+  } else {
+    elem.classList.add('open');
+    if (ueList) ueList.style.maxHeight = ueList.scrollHeight + 'px';
+  }
 }
 
+// Gère l'ouverture d'un contenu UE (clic sur UE)
+function toggleUE(event, elem) {
+  event.stopPropagation(); // Empêche d’ouvrir/fermer le semestre en même temps
 
-function toggleUE(event, clickedUE) {
-  event.stopPropagation();
+  const contentWrapper = elem.querySelector('.ue-content-wrapper');
+  if (!contentWrapper) return;
 
-  const content = clickedUE.querySelector('.ue-content');
-  const isOpen = clickedUE.classList.contains('open');
-
+  const isOpen = elem.classList.contains('open');
   if (isOpen) {
-    clickedUE.classList.remove('open');
-    content.style.maxHeight = null;
+    elem.classList.remove('open');
+    contentWrapper.style.maxHeight = null;
   } else {
-    clickedUE.classList.add('open');
-    content.style.maxHeight = content.scrollHeight + 'px';
+    elem.classList.add('open');
+    contentWrapper.style.maxHeight = contentWrapper.scrollHeight + 'px';
   }
 }
 
