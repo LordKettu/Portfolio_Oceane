@@ -30,7 +30,7 @@ header {
 main#main-content {
   margin-top: 180px; /* même hauteur que le header */
   padding: 20px;
-
+  margin-bottom: 150px;
   padding-bottom: 150px; 
 }
 
@@ -217,4 +217,11 @@ main#main-content {
 .semestre-block.open .ue-list,
 .ue-block.open .ue-content {
   max-height: 500px; /* assez grand pour le contenu */
+}
+
+.semestre-block .ue-list,
+.ue-block .ue-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease;
 }

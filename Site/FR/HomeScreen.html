@@ -45,45 +45,63 @@
 
     <script src="./scripts/loader.js"></script>
     <script>
-  const footer = document.getElementById('footer-deroulant');
-  let footerVisible = false;
-
-  window.addEventListener('scroll', () => {
-    // hauteur totale page - hauteur fenêtre
+function checkFooterVisibility() {
+  requestAnimationFrame(() => {
+    const footer = document.getElementById('footer-deroulant');
     const scrollBottom = window.scrollY + window.innerHeight;
     const pageHeight = document.documentElement.scrollHeight;
 
-    // Quand on est à moins de 50px du bas, afficher footer
     if (scrollBottom >= pageHeight - 50) {
-      if (!footerVisible) {
-        footer.classList.add('visible');
-        footerVisible = true;
-      }
+      footer.classList.add('visible');
     } else {
-      if (footerVisible) {
-        footer.classList.remove('visible');
-        footerVisible = false;
-      }
+      footer.classList.remove('visible');
     }
   });
+}
+
+
+window.addEventListener('scroll', checkFooterVisibility);
 
 function toggleSemestre(clickedBlock) {
   const allSemestres = document.querySelectorAll('.semestre-block');
 
   allSemestres.forEach(block => {
-    if (block !== clickedBlock) {
+    const content = block.querySelector('.ue-list');
+
+    if (block === clickedBlock) {
+      const isOpen = block.classList.contains('open');
+      if (isOpen) {
+        block.classList.remove('open');
+        content.style.maxHeight = null;
+      } else {
+        block.classList.add('open');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    } else {
       block.classList.remove('open');
+      block.querySelector('.ue-list').style.maxHeight = null;
     }
   });
 
-  clickedBlock.classList.toggle('open');
+  setTimeout(checkFooterVisibility, 500);
 }
+
 
 function toggleUE(event, clickedUE) {
   event.stopPropagation();
 
-  clickedUE.classList.toggle('open');
+  const content = clickedUE.querySelector('.ue-content');
+  const isOpen = clickedUE.classList.contains('open');
+
+  if (isOpen) {
+    clickedUE.classList.remove('open');
+    content.style.maxHeight = null;
+  } else {
+    clickedUE.classList.add('open');
+    content.style.maxHeight = content.scrollHeight + 'px';
+  }
 }
+
 </script>
 </body>
 </html>
