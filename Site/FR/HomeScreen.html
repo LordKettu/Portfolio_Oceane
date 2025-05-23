@@ -66,6 +66,24 @@
       }
     }
   });
+
+function toggleSemestre(clickedBlock) {
+  const allSemestres = document.querySelectorAll('.semestre-block');
+
+  allSemestres.forEach(block => {
+    if (block !== clickedBlock) {
+      block.classList.remove('open');
+    }
+  });
+
+  clickedBlock.classList.toggle('open');
+}
+
+function toggleUE(event, clickedUE) {
+  event.stopPropagation();
+
+  clickedUE.classList.toggle('open');
+}
 </script>
 </body>
 </html>

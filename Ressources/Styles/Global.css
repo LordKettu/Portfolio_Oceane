@@ -30,6 +30,8 @@ header {
 main#main-content {
   margin-top: 180px; /* même hauteur que le header */
   padding: 20px;
+
+  padding-bottom: 150px; 
 }
 
 #footer-deroulant {
@@ -164,4 +166,55 @@ main#main-content {
 
 .banner_center h1 a.title-click:hover {
   color: rgb(238, 111, 111);
+}
+
+.semestre-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 40px;
+}
+
+.semestre-block {
+  background-color: #f3beb6;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 22px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: relative;
+}
+.semestre-block .ue-list,
+.ue-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.ue-block {
+  background-color: #eaa29c;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.ue-content {
+  display: none;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #fff7f2;
+}
+
+/* Container à animer */
+
+
+/* État ouvert */
+.semestre-block.open .ue-list,
+.ue-block.open .ue-content {
+  max-height: 500px; /* assez grand pour le contenu */
 }
