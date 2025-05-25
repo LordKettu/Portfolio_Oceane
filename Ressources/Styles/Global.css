@@ -28,7 +28,7 @@ header {
 }
 
 main#main-content {
-    margin-top: 180px; /* hauteur header */
+    margin-top: 200px; /* hauteur header */
     padding: 20px;
     margin-bottom: 150px;
     padding-bottom: 150px;
@@ -217,3 +217,36 @@ h3 a.title-click:hover {
     max-height: 1000px;
 }
 
+/* Conteneur principal de la page CV */
+.cv-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Image réduite avec style */
+.cv-image {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Bouton stylisé */
+.cv-button {
+  padding: 12px 24px;
+  background-color: #eaa29c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cv-button:hover {
+  background-color:rgb(238, 111, 111);
+}

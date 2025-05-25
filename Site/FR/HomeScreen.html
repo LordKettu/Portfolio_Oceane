@@ -64,19 +64,16 @@ function checkFooterVisibility() {
 
 window.addEventListener('scroll', checkFooterVisibility);
 
-// Gère l'ouverture d'un semestre, fermeture des autres
 function toggleSemestre(elem) {
   const allSemestres = document.querySelectorAll('.semestre-block');
   allSemestres.forEach(sem => {
     if (sem !== elem) {
       sem.classList.remove('open');
-      // Réinitialiser hauteur max pour animation fermeture
       const ueList = sem.querySelector('.ue-list');
       if (ueList) ueList.style.maxHeight = null;
     }
   });
   
-  // Toggle celui cliqué
   const isOpen = elem.classList.contains('open');
   const ueList = elem.querySelector('.ue-list');
   
@@ -89,9 +86,8 @@ function toggleSemestre(elem) {
   }
 }
 
-// Gère l'ouverture d'un contenu UE (clic sur UE)
 function toggleUE(event, elem) {
-  event.stopPropagation(); // Empêche d’ouvrir/fermer le semestre en même temps
+  event.stopPropagation();
 
   const contentWrapper = elem.querySelector('.ue-content-wrapper');
   if (!contentWrapper) return;
@@ -106,6 +102,17 @@ function toggleUE(event, elem) {
   }
 }
 
+</script>
+
+<script>
+  function telechargerPDF() {
+    const lien = document.createElement('a');
+    lien.href = '../../Ressources/Images/CVOceane.pdf';
+    lien.download = 'CV_Oceane_Masse.pdf';
+    document.body.appendChild(lien);
+    lien.click();
+    document.body.removeChild(lien);
+  }
 </script>
 </body>
 </html>
