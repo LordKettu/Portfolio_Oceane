@@ -6,13 +6,4 @@
   <button onclick="telechargerPDF()" class="cv-button">Télécharger en PDF</button>
 </section>
 
-<script>
-  function telechargerPDF() {
-    const lien = document.createElement('a');
-    lien.href = '../../Ressources/Images/CVOceane.pdf';
-    lien.download = 'CV_Oceane_Masse.pdf';
-    document.body.appendChild(lien);
-    lien.click();
-    document.body.removeChild(lien);
-  }
-</script>
+
