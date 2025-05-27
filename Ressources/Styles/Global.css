@@ -180,12 +180,12 @@ h3 a.title-click:hover {
 .semestre-block .ue-list {
     max-height: 0px;
     overflow: hidden;
-    transition: max-height 0.8s ease;
+    transition: max-height 1s ease;
 }
 
 /* Semestre ouvert */
 .semestre-block.open .ue-list {
-    max-height: 21000px;
+    max-height: 19000px;
 }
 
 /* Blocs UE */
