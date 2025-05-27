@@ -178,14 +178,14 @@ h3 a.title-click:hover {
 
 /* Liste UE masquée */
 .semestre-block .ue-list {
-    max-height: 0;
+    max-height: 0px;
     overflow: hidden;
     transition: max-height 0.8s ease;
 }
 
 /* Semestre ouvert */
 .semestre-block.open .ue-list {
-    max-height: 2000px;
+    max-height: 21000px;
 }
 
 /* Blocs UE */
@@ -206,15 +206,19 @@ h3 a.title-click:hover {
 }
 
 .ue-content {
-    padding: 10px 0;
-    font-size: 16px;
-    font-weight: normal;
-    color: #fff7f2;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: normal;
+  color: #fff7f2;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
+
 
 /* UE ouverte */
 .ue-block.open .ue-content-wrapper {
-    max-height: 1000px;
+    max-height: 2000px;
 }
 
 /* Conteneur principal de la page CV */
@@ -257,3 +261,26 @@ h3 a.title-click:hover {
   align-items: center;  
   margin-left: 20.5%;
 }
+
+.page.accueil {
+  width: 60%;
+  margin: 0 auto; 
+  text-align: center;
+  font-size: 1.3rem; 
+  line-height: 1.6; 
+  padding: 40px 0;  
+  color: white;
+} 
+
+  .ue-subblock {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .short-divider {
+    text-align: center;
+    width: 60%;
+    border: none;
+    height: 2px;
+    background-color: #f3beb6;
+    margin: 1em auto;
+  }
