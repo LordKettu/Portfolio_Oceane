@@ -338,4 +338,5 @@ h3 a.title-click:hover {
   width: 70%; 
   margin: 0 auto; 
   text-align: justify;
+  font-size: larger;
 }
