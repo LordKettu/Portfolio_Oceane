@@ -284,3 +284,58 @@ h3 a.title-click:hover {
     background-color: #f3beb6;
     margin: 1em auto;
   }
+
+.Projet blockquote {
+  background-color: #fff5f2;
+  border-left: 6px solid #eaa29c;
+  margin: 30px auto;
+  padding: 25px 35px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+  color: #4a2e2e;
+  max-width: 900px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.Projet blockquote h1,
+.Projet blockquote h2,
+.Projet blockquote h3 {
+  color: #b04a4a;
+  margin-top: 20px;
+}
+
+.Projet blockquote ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.Projet blockquote li {
+  margin-bottom: 8px;
+}
+
+.Projet h2 {
+  color: beige;
+  margin-bottom: 20px;
+}
+
+.important {
+  color: #a22;
+  font-weight: bold;
+}
+
+
+.titre-projet {
+  text-align: center;
+  font-size: 28px;
+  color: #b04a4a;
+  margin-bottom: 10px;
+}
+
+.paragraphe {
+  font-family: 'Montserrat', sans-serif; 
+  color: beige; 
+  width: 70%; 
+  margin: 0 auto; 
+  text-align: justify;
+}
