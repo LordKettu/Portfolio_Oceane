@@ -34,6 +34,13 @@ main#main-content {
     padding-bottom: 150px;
 }
 
+.img-placeholder {
+  height: 230px;
+  width: 170px;
+  background-color: transparent;  
+
+}
+
 #footer-deroulant {
     position: fixed;
     bottom: -90px;
