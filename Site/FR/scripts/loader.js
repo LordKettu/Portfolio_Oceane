@@ -1,6 +1,6 @@
 // Fonction pour charger une page dans le <main>
 function loadPage(pageName) {
-  fetch('../../../Ressources/Jeu_WebGl/index.html')
+  fetch('../../Ressources/Jeu_WebGl/index.html')
   .then(response => {
     if (!response.ok) {
       throw new Error(`Erreur HTTP: ${response.status}`);
