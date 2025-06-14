@@ -20,7 +20,6 @@ header {
     background-color: #f3beb6;
     position: fixed;
     top: 0;
-    height: 170px;
     width: 100%;
     background-size: cover;
     opacity: 1;
@@ -29,10 +28,16 @@ header {
 }
 
 main#main-content {
-    margin-top: 200px; /* hauteur header */
+    margin-top: 200px; 
     padding: 20px;
     margin-bottom: 150px;
     padding-bottom: 150px;
+}
+
+.profile-placeholder {
+  height: 170px;
+  width: 170px;
+  background-color: transparent; 
 }
 
 /* Footer déroulant */
@@ -60,6 +65,7 @@ main#main-content {
 /* Bannière */
 .banner {
     width: 100%;
+    height: 170px;
     display: flex;
     justify-content: space-between;
     align-items: center;
