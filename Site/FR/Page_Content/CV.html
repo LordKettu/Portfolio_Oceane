@@ -1,9 +1,15 @@
 <section class="page cv cv-container">
-  <img src="../../../Ressources/Images/CVOceane.png" alt="CVOceane.png" class="cv-image">
+  
+<script>const image = new Image();
+image.src = '../../Ressources/Images/CVOceane.png';
+image.alt = 'CV Océane';
+image.classList.add('cv-image');
 
+document.querySelector('.cv-container')?.appendChild(image);</script>
 
   <br>
   <button onclick="telechargerPDF()" class="cv-button">Télécharger en PDF</button>
 </section>
+
 
 
