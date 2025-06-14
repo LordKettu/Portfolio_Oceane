@@ -1,5 +1,21 @@
 // Fonction pour charger une page dans le <main>
 function loadPage(pageName) {
+  fetch('../../Ressources/Images/CVOceane.png')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP: ${response.status}`);
+    }
+    return response.text();  // ou response.json(), response.blob(), etc. selon le type de fichier
+  })
+  .then(data => {
+    console.log('Contenu du fichier:', data);
+    // Faire quelque chose avec data (le contenu du fichier)
+  })
+  .catch(error => {
+    console.error('Erreur lors du chargement du fichier:', error);
+  });
+
+
   fetch(`./Page_Content/${pageName}.html`)
     .then(res => res.text())
     .then(data => {
