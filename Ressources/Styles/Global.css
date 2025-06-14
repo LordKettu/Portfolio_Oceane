@@ -34,13 +34,6 @@ main#main-content {
     padding-bottom: 150px;
 }
 
-.profile-placeholder {
-  height: 170px;
-  width: 170px;
-  background-color: transparent; 
-}
-
-/* Footer déroulant */
 #footer-deroulant {
     position: fixed;
     bottom: -90px;
